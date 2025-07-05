@@ -77,7 +77,8 @@ const OnboardingForm = ({ industries }) => {
 
   return (
     <div className="flex items-center justify-center bg-background">
-      <Card className="w-full max-w-lg mt-10 mx-2">
+      <Card className="w-full max-w-lg bg-[#1e293b] border border-blue-700 shadow-md text-white mt-6 sm:mt-12">
+
         <CardHeader>
           <CardTitle className="gradient-title text-4xl">
             Complete Your Profile
@@ -87,9 +88,10 @@ const OnboardingForm = ({ industries }) => {
             recommendations.
           </CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="relative z-50">
+
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-            <div className="space-y-2">
+            <div className="space-y-2 z-50">
               <Label htmlFor="industry">Industry</Label>
               <Select
                 onValueChange={(value) => {
@@ -103,8 +105,10 @@ const OnboardingForm = ({ industries }) => {
                 <SelectTrigger id="industry">
                   <SelectValue placeholder="Select an industry" />
                 </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
+               <SelectContent  className="z-[999] bg-[#1e293b]">
+
+
+                  <SelectGroup >
                     <SelectLabel>Industries</SelectLabel>
                     {industries.map((ind) => (
                       <SelectItem key={ind.id} value={ind.id}>
@@ -130,8 +134,10 @@ const OnboardingForm = ({ industries }) => {
                   <SelectTrigger id="subIndustry">
                     <SelectValue placeholder="Select your specialization" />
                   </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
+                  <SelectContent className="z-[999] bg-[#1e293b]">
+
+
+                    <SelectGroup >
                       <SelectLabel>Specializations</SelectLabel>
                       {selectedIndustry?.subIndustries.map((sub) => (
                         <SelectItem key={sub} value={sub}>
